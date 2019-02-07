@@ -1,0 +1,18 @@
+<% include ../partials/header.ejs %>
+<div class="col sm12">
+    <form action="http://localhost:4000/event/add" method="post">
+        <input type="hidden" name="id_kel_assets" value="">
+        <div class="form-group">
+            <label for="">Nama</label>
+            <input type="text" class="form-control" name="nama_kel_assets"/>
+        </div>
+        <div class="form-group">
+            <label for="">Keterangan</label>
+            <textarea name="keterangan" id="" cols="30" rows="10" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" name="submit" value="Save"/>
+        </div>
+    </form>
+</div>
+<% include ../partials/footer.ejs %>

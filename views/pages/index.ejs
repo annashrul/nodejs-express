@@ -1,0 +1,47 @@
+<% include ../partials/header.ejs %>
+
+    <div class="row">
+        <div class="col s12">
+            <a href="/event/add" class="btn btn-primary">Add</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12">
+            <div class="table-responsive">
+                <% if(items.length > 0){%>
+                <table class="table table-responsive table-bordered">
+                    <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Keterangan</th>
+                        <th>#</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% items.forEach(function (item, key) {  %>
+                    <tr>
+                        <td><%=key+1%></td>
+                        <td><%=item.nama_kel_assets%></td>
+                        <td><%=item.keterangan%></td>
+                        <td>
+                            <a href="/event/edit/<%=item.id_kel_assets%>" class="btn btn-primary">Edit</a>
+                            <a href="/event/delete/<%=item.id_kel_assets%>" class="btn btn-primary">Delete</a>
+                        </td>
+                    </tr>
+                    <% })%>
+                    </tbody>
+                </table>
+                <%}else{%>
+                <p class="text-center">Data Tidak Ada</p>
+                <%}%>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+<% include ../partials/footer.ejs %>
